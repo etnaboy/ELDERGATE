@@ -254,8 +254,8 @@ def main() -> int:
             r = resolve(e, pack["minecraft"], "forge")
             resolved.append(r)
             mark = "✓"
-            print(f"│ {mark} {e.name[:34]:34} {r.version_number[:26]:26} "
-                  f"[{e.side:6}] {r.entry.slug}")
+            print(f"│ {mark} {e.name[:32]:32} {r.version_number[:24]:24} "
+                  f"[{e.side:6}] {r.filename}")
         except NetworkDown as ex:
             print("│")
             print(f"│ ✗ RETE ASSENTE: {ex}")
