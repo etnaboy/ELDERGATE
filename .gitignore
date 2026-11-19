@@ -1,0 +1,11 @@
+# pacchetti generati
+dist/
+*.mrpack
+
+# lock file: si rigenerano in CI, ma li versioniamo per riproducibilità
+# (non ignorare manifest/)
+
+# roba locale
+__pycache__/
+*.pyc
+.DS_Store
