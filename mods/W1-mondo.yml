@@ -1,0 +1,194 @@
+# ═══════════════════════════════════════════════════════════════════
+# W1 — MONDO
+# Tutto ciò che ti dà un posto dove andare.
+# Regola: UNA overhaul per Nether, UNA per End. Otto dimensioni, non venticinque.
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 1
+title: "Mondo"
+goal: "Un mondo nuovo si genera, il portale dell'Aether si accende, i dungeon compaiono."
+
+overworld:
+  - name: William Wythers' Overhauled Overworld
+    slug: william-wythers-overhauled-overworld
+    side: both
+    status: verified
+    why: "Biomi dell'Overworld rifatti nello stile rich fantasy. Richiede TerraBlender."
+
+  - name: Terralith
+    slug: terralith
+    side: both
+    status: check
+    why: "Biomi generati via datapack. Da verificare la convivenza con Wythers: insieme possono saturare."
+
+  - name: Tectonic
+    slug: tectonic
+    side: both
+    status: check
+    why: "Rilievi più estremi. Opzionale: da decidere dopo aver visto il mondo di prova."
+
+nether:
+  # ── UNA SOLA. Le altre quattro sono escluse, vedi docs/scelte.md ──
+
+  - name: Incendium
+    slug: incendium
+    side: both
+    status: verified
+    why: "Overhaul del Nether con strutture e boss propri. Scelta al posto di Jaden's Nether perché porta i boss."
+
+end:
+  - name: Eldritch End
+    slug: eldritch-end
+    side: both
+    status: check
+    why: "Overhaul dell'End in chiave oscura. UNA sola: le alternative (End's Phantasm, BetterEnd) sono escluse."
+
+aether:
+  # ── Il pacchetto Aether non si divide: base + Villages + Deep Aether + Redux ──
+
+  - name: The Aether
+    slug: aether
+    side: both
+    status: verified
+    why: "La dimensione. Base di tutto il pacchetto."
+
+  - name: Aether Villages
+    slug: aether-villages
+    side: both
+    status: check
+    why: "Villaggi nella dimensione. Richiede The Aether."
+
+  - name: Deep Aether
+    slug: deep-aether
+    side: both
+    status: verified
+    why: "Espansione profonda dell'Aether. Richiede The Aether + AeroBlender + GeckoLib."
+
+  - name: Aether Redux
+    slug: aether-redux
+    side: both
+    status: risky
+    why: "Texture e atmosfera (NON è la mod Aether). Tira dentro altre dipendenze: Advanced Tooltips, Aether Gravitation, TerraBlender Fix. Se pesa, si taglia per prima."
+
+  - name: AeroBlender
+    slug: aeroblender
+    side: both
+    status: verified
+    why: "Dipendenza obbligatoria di Deep Aether e Redux."
+
+  - name: Nitrogen
+    slug: nitrogen
+    side: both
+    status: check
+    why: "Dipendenza della famiglia Aether. Da confermare la versione per 1.20.1."
+
+  - name: Cumulus
+    slug: cumulus
+    side: both
+    status: check
+    why: "Libreria della famiglia Aether, come sopra."
+
+dimensions:
+  - name: Twilight Forest
+    slug: twilight-forest
+    side: both
+    status: verified
+    why: "Il classico: progressione a boss, dungeon, loot. Costa poco, dà tanto."
+
+  - name: The Bumblezone
+    slug: the-bumblezone
+    side: both
+    status: verified
+    why: "La dimensione verticale dentro un alveare. Rompe il ritmo."
+
+  - name: Deeper and Darker
+    slug: deeperdarker
+    side: both
+    status: verified
+    why: "La discesa nell'Otherside. Il contrasto cupo all'Aether."
+
+  - name: The Undergarden
+    slug: the-undergarden
+    side: both
+    status: verified
+    why: "Sotterranea umida, funghi, materiali propri. L'ultima aggiunta, la prima da tagliare."
+
+  - name: Alex's Caves
+    slug: alexs-caves
+    side: both
+    status: verified
+    why: "Caverne enormi con biomi propri dentro l'Overworld. Richiede Citadel."
+
+  - name: Citadel
+    slug: citadel
+    side: both
+    status: verified
+    why: "Dipendenza di Alex's Caves (e di Ice and Fire)."
+
+dependencies_biome:
+  - name: TerraBlender
+    slug: terrablender
+    side: both
+    status: verified
+    why: "Senza, i biomi delle mod non vengono generati. La chiedono Alex's Caves, Deep Aether, Bumblezone, Undergarden."
+
+structures:
+  - name: YUNG's Better Dungeons
+    slug: yungs-better-dungeons
+    side: both
+    status: verified
+    why: "Dungeon rifatti. Richiede YUNG's API."
+
+  - name: YUNG's Better Mineshafts
+    slug: yungs-better-mineshafts
+    side: both
+    status: verified
+    why: "Miniere che non sono corridoi vuoti."
+
+  - name: YUNG's Better Strongholds
+    slug: yungs-better-strongholds
+    side: both
+    status: verified
+    why: "Fortezze. Richiede YUNG's API."
+
+  - name: YUNG's Better Ocean Monuments
+    slug: yungs-better-ocean-monuments
+    side: both
+    status: verified
+    why: "Monumenti. Richiede YUNG's API."
+
+  - name: YUNG's Better Nether Fortresses
+    slug: yungs-better-nether-fortresses
+    side: both
+    status: verified
+    why: "Fortezze del Nether. Richiede YUNG's API."
+
+  - name: YUNG's Better End Island
+    slug: yungs-better-end-island
+    side: both
+    status: verified
+    why: "L'isola dell'End. Richiede YUNG's API."
+
+  - name: When Dungeons Arise
+    slug: when-dungeons-arise
+    side: both
+    status: verified
+    why: "Dungeon enormi e spettacolari. Il rischio è la densità: da tarare."
+
+  - name: Lootr
+    slug: lootr
+    side: both
+    status: verified
+    why: "Loot per giocatore, non per mondo. In tre è obbligatoria: senza, il primo che passa svuota tutto."
+
+  - name: Explorer's Compass
+    slug: explorers-compass
+    side: both
+    status: verified
+    why: "Trova le strutture. Con 8 dimensioni serve."
+
+  - name: Waystones
+    slug: waystones
+    side: both
+    status: verified
+    why: "Teletrasporto fra basi. Riduce le bestemmie da viaggio."

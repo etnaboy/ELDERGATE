@@ -1,0 +1,93 @@
+# ═══════════════════════════════════════════════════════════════════
+# W2 — MANI
+# Combattimento e equipaggiamento.
+# Regola: le patch di Epic Fight NON sono mod, sono raccordi e stanno insieme.
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 2
+title: "Mani"
+goal: "Si mena una spada, si para, si schiva. I danni si vedono."
+
+combat_core:
+  - name: Epic Fight
+    slug: epic-fight-mod
+    requires: [PlayerAnimator]
+    side: both
+    status: verified
+    why: "Combattimento con animazioni e moveset. È il pilastro: cambia il gioco più di ogni altra mod."
+
+  - name: Epic Fight — Epic ParCool patch
+    slug: epicfight-parcool-compat
+    side: both
+    status: check
+    why: "Raccordo fra Epic Fight e ParCool. Ha senso solo se stanno entrambe."
+
+  - name: ParCool
+    slug: parcool
+    side: both
+    status: check
+    why: "Parkour: arrampicarsi, scivolare, salti. Spesso gradito accanto a Epic Fight, ma è una scelta."
+
+equipment:
+  - name: Curios API
+    slug: curios
+    side: both
+    status: verified
+    why: "Slot accessori. Senza, Artifacts, Jewelry, Relics e tutte le RPG Series cadono."
+
+  - name: Artifacts
+    slug: artifacts
+    requires: [Curios API]
+    side: both
+    status: verified
+    why: "Accessori rari trovati nei dungeon. Con Curios diventa un sistema."
+
+  - name: Simply Swords
+    slug: simply-swords
+    requires: [Architectury API]
+    side: both
+    status: verified
+    why: "Armi aggiuntive ben fatte. La base del pacchetto armi."
+
+  - name: Simply More
+    slug: simply-more
+    side: both
+    status: check
+    why: "Espansione di Simply Swords. Da confermare la versione Forge 1.20.1."
+
+  - name: Simply Bows
+    slug: simply-bows
+    side: both
+    status: check
+    why: "Archi aggiuntivi, stesso autore. Da confermare."
+
+  - name: Marium's Soulslike Weaponry
+    slug: marium-s-soulslike-weaponry
+    side: both
+    status: verified
+    why: "Armi souls, pesanti e lente: sposano Epic Fight meglio delle armi veloci."
+
+  - name: Epic Knights — Shield Expansion
+    slug: epic-knights-shield-expansion
+    side: both
+    status: check
+    why: "Scudi con varietà. Da verificare con Epic Fight: gli scudi vanilla non hanno moveset."
+
+# ── Le patch di Epic Fight: tutte legittime, tutte secondarie ──────
+epicfight_patches:
+  - name: Epic Fight — Simply Swords patch
+    slug: epicfight-simply-swords-compat
+    side: both
+    status: check
+    why: "Dà il moveset di Epic Fight alle armi di Simply Swords. Senza, quelle armi si usano come vanilla."
+
+  - name: Epic Fight — Curios compat
+    slug: epicfight-curios
+    side: both
+    status: check
+    why: "Anelli e accessori con le animazioni di Epic Fight."
+
+excluded_note: |
+  Fuori (vedi docs/scelte.md):
+  - YDM's Weapon Master, Arsenal/Armory: quarta e quinta libreria di armi sovrapposta a Simply Swords.
+  - Better Combat: VIETATA, va in conflitto con Epic Fight.

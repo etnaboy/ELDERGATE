@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════════════════════════════════
+# W5 — SÉ
+# Progressione. Tre sistemi su tre piani diversi + qualità degli oggetti.
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 5
+title: "Sé"
+goal: "Si guadagna un punto, si spende, si muore, si torna alla tomba."
+
+progression:
+  - name: Skill Tree (RPG Series)
+    slug: skill-tree
+    requires: [Curios API]
+    side: both
+    status: verified
+    why: "Pilastro della progressione: albero di classe, nodi, abilità attive. Si costruisce con il tool dell'autore, quindi 'grande e personalizzato' dipende da noi."
+
+  - name: Just Leveling
+    slug: just-leveling
+    side: both
+    status: check
+    why: "Crescita passiva su 8 attitudini, con blocchi sugli item: è l'unico che porta una meccanica nuova, non solo una barra."
+
+  - name: Passive Skill Tree
+    slug: passive-skill-tree
+    side: both
+    status: check
+    why: "Secondo albero, talenti passivi. Sta su un piano diverso da Skill Tree: non è un doppione."
+
+  - name: Passive Skill Tree — Mob Kill Points
+    slug: skilltreemkp
+    side: both
+    status: risky
+    why: "Dà i punti uccidendo mob. L'autore dichiara di non averlo testato e che il multiplayer non funziona di default: in tre è un problema. Piano B: punti via comando."
+
+  - name: Tierify Reforged
+    slug: tierify-reforged
+    side: both
+    status: verified
+    why: "NON è un sistema di livelli: è qualità degli oggetti (da rotta a leggendaria, riforgiabile). Non litiga con nessuno."
+
+death:
+  - name: Yet Another Gravestone
+    slug: yet-another-gravestone-mod
+    side: both
+    status: check
+    why: "L'unica tomba del pack. KeepInventory resta SPENTO, altrimenti la tomba non ha niente da raccogliere."
+
+  - name: Hardcore Revival
+    slug: hardcore-revival
+    side: both
+    status: check
+    why: "Rianimare un amico a terra. In tre con boss grossi cambia il modo di giocare."
+
+gore:
+  - name: BN Blood Particles
+    slug: bn-blood-particles
+    side: both
+    status: verified
+    why: "L'unica mod di sangue: particelle su ogni danno, 13 tipi per creatura, fisica delle gocce, supporto shader. 500k+ download, 1.20.1 Forge."
+
+# ── Fuori, con motivo ─────────────────────────────────────────────
+excluded_note: |
+  Fuori da W5 (vedi docs/scelte.md):
+  - Mine and Slash, Remnants RPG Stats, History Stages, Auto Leveling, Runeborn: quarto, quinto e sesto sistema di livelli. Tre bastano.
+  - You're in Grave Dangers, Bonfires, Soul Bound Enchantment, Configurable KeepInventory: morte e tomba sono già decise.
+  - I Have Blood n' Bones, Bleeding System, Blood Magic, Tome of Blood: sanguinamento e magia del sangue.
