@@ -1,0 +1,61 @@
+# ═══════════════════════════════════════════════════════════════════
+# W3 — ARTE
+# Magia: tre pilastri, non sei.
+# Goety resta fuori da questa ondata (fa il lavoro di Iron's ma con un altro albero).
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 3
+title: "Arte"
+goal: "Si lancia un incantesimo di Iron's, si crea un glifo di Ars, si evoca qualcosa con Occultism."
+
+pillars:
+  - name: Iron's Spells 'n Spellbooks
+    slug: irons-spells-n-spellbooks
+    requires: [GeckoLib, Curios API]
+    side: both
+    status: verified
+    why: "Pilastro 1: magia da combattimento, scuole, libri. Da sola è già una montagna di contenuti."
+
+  - name: Ars Nouveau
+    slug: ars-nouveau
+    requires: [Architectury API, GeckoLib, Curios API]
+    side: both
+    status: verified
+    why: "Pilastro 2: glifi, automazione magica, utilità. Complementare a Iron's, non concorrente."
+
+  - name: Occultism
+    slug: occultism
+    requires: [Modonomicon]
+    side: both
+    status: verified
+    why: "Pilastro 3: summoning e progressione tramite spiriti. Un terzo pilastro legittimo, non un doppione."
+
+  - name: Modonomicon
+    slug: modonomicon
+    side: both
+    status: verified
+    why: "Libreria dei libri-guida. Obbligatoria per Occultism (e per Goety)."
+
+# ── Addon: si scelgono, non si accumulano ─────────────────────────
+# Regola: un addon entra solo se aggiunge una scuola/meccanica che gli altri non hanno.
+iron_addons:
+  - name: Iron's Spells — addon di scuola (x3 max)
+    slug: null
+    side: both
+    status: check
+    why: "Slot per gli addon scelti in Fase 1: massimo 3. Nella lista originale ce n'erano ~17."
+
+ars_addons:
+  - name: Ars Nouveau — addon (x2 max)
+    slug: null
+    side: both
+    status: check
+    why: "Slot per gli addon scelti: massimo 2. Nella lista originale ce n'erano ~11."
+
+# ── Fuori, con motivo ─────────────────────────────────────────────
+excluded_note: |
+  Fuori da W3 (vedi docs/scelte.md):
+  - Goety: fa ciò che fa Iron's ma più oscuro, con un secondo albero di ricerca. Da valutare come W3.5.
+  - Blood Magic, Tome of Blood: quarto pilastro del sangue. Il sangue resta estetico (BN Blood Particles).
+  - Vampirism: ammessa come *trasformazione*, non come scuola di magia. Rinviata a W6.
+  - Forbidden and Arcanus, Ars Zero, Qliphoth Awakening, Celestisynth, Terramity: fuori o "dopo l'1.0".

@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════════════════════════
+# W4 — BESTIE
+# Boss e mob. 10-12 mod, non 20.
+# Criterio: ogni boss deve appartenere a un momento della progressione.
+# Uno che non sai quando combattere è un mob che ti ammazza al minuto uno.
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 4
+title: "Bestie"
+goal: "Il primo boss è battibile al livello giusto, non oneshot al primo minuto."
+
+early:
+  - name: Born in Chaos
+    slug: born-in-chaos
+    requires: [GeckoLib]
+    side: both
+    status: verified
+    why: "Mob ostili ma accessibili. Riempie l'inizio del gioco."
+
+  - name: Graveyard
+    slug: the-graveyard-fabric
+    side: both
+    status: check
+    why: "Mob dell'orrore, atmosfera. Da verificare che la build Forge 1.20.1 sia supportata."
+
+mid:
+  - name: Bosses of Mass Destruction
+    slug: bosses-of-mass-destruction
+    requires: [GeckoLib]
+    side: both
+    status: verified
+    why: "Quattro boss in quattro contesti diversi. Ottimo rapporto contenuto/rischio."
+
+  - name: EEEAB's
+    slug: eeeabs-mobs
+    side: both
+    status: check
+    why: "Mob e boss vari con barre proprie. Attenzione: la sua barra può sovrapporsi alle altre."
+
+  - name: Mowzie's Mobs
+    slug: mowzies-mobs
+    side: both
+    status: check
+    why: "Boss memorabili con animazioni ottime. Richiede GeckoLib."
+
+  - name: Meet Your Fight
+    slug: meet-your-fight
+    side: both
+    status: check
+    why: "Boss evocabili con rituali. Si integra bene con la regola del boss in esilio."
+
+late:
+  - name: Cataclysm
+    slug: cataclysm
+    requires: [GeckoLib, Curios API]
+    side: both
+    status: verified
+    why: "Il pacchetto boss più grosso e più curato. Richiede GeckoLib + Curios."
+
+  - name: 'Wither: Reincarnated'
+    slug: wither-reincarnated
+    side: both
+    status: check
+    why: "Rifà il Wither come boss vero. Boss di frontiera: chiude una fase."
+
+  - name: Deeper and Darker (contenuti boss)
+    slug: deeperdarker
+    side: both
+    status: verified
+    why: "Già in W1: i suoi boss arrivano con la dimensione."
+
+# ── La regola del boss in esilio ─────────────────────────────────
+# Una mod può restare installata senza aprire la sua dimensione:
+# il boss si richiama in Overworld con un rituale.
+# Vale per: Eternal Starlight.
+# NON vale per: Terramity, Advent of Ascension (boss inseparabile dal mondo).
+
+exiled_bosses:
+  - name: Eternal Starlight
+    slug: eternal-starlight
+    side: both
+    status: risky
+    why: "Dimensione non aperta. La mod resta per i boss, evocabili in Overworld con gli spawner. Se pesa, si toglie del tutto."
+
+excluded_note: |
+  Fuori da W4 (vedi docs/scelte.md):
+  - Terramity / Advent of Ascension: boss inseparabile dal mondo. Tutto o niente, e "niente".
+  - Mutant Monsters E Mutant More: si sovrappongono, uno dei due.
+  - Legendary Monsters, Ash of Sin, Souls like Bosses Reforged, Aquamare, Nyctophobia: densità eccessiva, si valuta dopo il primo giro.
+  - L2 Hostility: non è un boss, è il motore di difficoltà. Sta da solo (vedi scelte).

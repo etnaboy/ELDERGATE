@@ -1,0 +1,83 @@
+# ═══════════════════════════════════════════════════════════════════
+# W6 — CASA
+# Il mondo diventa abitabile. Decorazioni, cibo, storage, un po' di tech soft.
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 6
+title: "Casa"
+goal: "Si costruisce una casa che non fa schifo e si cucina qualcosa."
+
+food:
+  - name: Farmer's Delight
+    slug: farmers-delight
+    side: both
+    status: verified
+    why: "Cibo, colture e cucina. Lo standard di fatto del genere."
+
+  - name: Farmer's Delight — addon (x2 max)
+    slug: null
+    side: both
+    status: check
+    why: "Slot per due addon scelti in Fase 3 (cioccolato? birra? nether?). Non tutti: gli addon di FD sono decine."
+
+decoration:
+  - name: Supplementaries
+    slug: supplementaries
+    requires: [Moonlight Lib]
+    side: both
+    status: verified
+    why: "Oggetti di scena e decorazioni utili. Richiede Moonlight Lib."
+
+  - name: Macaw's Furniture
+    slug: macaws-furniture
+    side: both
+    status: check
+    why: "Set di mobili. Ci sono decine di moduli Macaw's: si scelgono, non si prendono tutti."
+
+  - name: Handcrafted
+    slug: handcrafted
+    requires: [Resourceful Lib]
+    side: both
+    status: verified
+    why: "Mobili fatti in crafting table. Ottimo rapporto qualità/peso."
+
+  - name: Another Furniture
+    slug: another-furniture
+    side: both
+    status: check
+    why: "Alternativa/complemento a Handcrafted. Da valutare insieme, non entrambe per forza."
+
+storage:
+  - name: Tom's Simple Storage
+    slug: toms-storage
+    side: both
+    status: verified
+    why: "Magazzino senza tech spinta: reti di casse, terminale di ricerca. Perfetto per lo stile."
+
+tech_soft:
+  - name: Create
+    slug: create
+    requires: [Flywheel]
+    side: both
+    status: risky
+    why: "Tech *soft*, ammessa dallo stile (le macchine sono a vista e belle). Costo: Flywheel + un ecosistema enorme. Entra solo se ci tenete davvero."
+
+  - name: Flywheel
+    slug: flywheel
+    side: client
+    status: verified
+    why: "Rendering delle macchine animate di Create. Obbligatoria con Create."
+
+  - name: Iris & Oculus Flywheel Compat
+    slug: oculus-flywheel-compat
+    requires: [Oculus, Flywheel, Create]
+    side: client
+    status: check
+    why: "Solo se convivono Oculus + Flywheel + Create. Serve a non far crashare gli shader con le macchine di Create."
+
+utility:
+  - name: Vampirism
+    slug: vampirism
+    side: both
+    status: optional
+    why: "Trasformazione (vampiro/cacciatore), non una scuola di magia: non tocca la mana. Rinviata qui da W3."

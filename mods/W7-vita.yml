@@ -1,0 +1,79 @@
+# ═══════════════════════════════════════════════════════════════════
+# W7 — VITA
+# Si gioca in tre, si parla, non si perde niente.
+# Questa ondata è quella che fa la differenza tra "un pack" e "il nostro server".
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 7
+title: "Vita"
+goal: "Tre persone giocano una serata intera, si parlano, nulla si perde."
+
+voice:
+  - name: Simple Voice Chat
+    slug: simple-voice-chat
+    side: both
+    status: verified
+    why: "Voce in gioco, senza Discord aperto. In tre cambia tutto."
+
+map:
+  - name: JourneyMap
+    slug: journeymap
+    side: client
+    status: verified
+    why: "Mappa in tempo reale e waypoint. Una sola mappa: Xaero's è l'alternativa, non un'aggiunta."
+
+claim:
+  - name: FTB Chunks
+    slug: ftb-chunks
+    requires: [FTB Library]
+    side: both
+    status: verified
+    why: "Claim del territorio. In tre, senza claim, la casa dell'altro sparisce per sbaglio."
+
+  - name: FTB Teams
+    slug: ftb-teams
+    requires: [FTB Library]
+    side: both
+    status: verified
+    why: "Squadre: chi è con chi, chi può costruire dove."
+
+  - name: FTB Library
+    slug: ftb-library
+    side: both
+    status: verified
+    why: "Libreria comune a Chunks, Teams e Quests."
+
+quests:
+  - name: FTB Quests
+    slug: ftb-quests
+    requires: [FTB Library, FTB Teams]
+    side: both
+    status: verified
+    why: "Sistema di obiettivi UNICO del pack: ha l'editor e i team. Gli altri due sono fuori."
+
+tutorial:
+  - name: Patchouli
+    slug: patchouli
+    side: both
+    status: verified
+    why: "Libri-guida in gioco. Con 230 mod serve: nessuno legge 230 pagine di wiki."
+
+  - name: Guida 'Eldergate' (nostra)
+    slug: null
+    side: both
+    status: check
+    why: "Libro Patchouli scritto da noi: primi passi, dimensioni, progressione. È lavoro di lore, non di mod."
+
+backup:
+  - name: Backup periodici (lato server)
+    slug: null
+    side: server
+    status: check
+    why: "Con questa densità di mod, un mondo corrotto è questione di quando. Uno script o una mod di backup."
+
+# ── Il server ─────────────────────────────────────────────────────
+server_note: |
+  Requisiti minimi indicativi per 3 giocatori con ~230 mod:
+  - RAM server: 8-10 GB (con Distant Horizons lato client, il server respira meglio)
+  - RAM client: 8 GB dedicati (Embeddium + Ferrite Core aiutano)
+  - La world border resta ARCHIVIATA: nessun pregen forzato, si genera camminando.

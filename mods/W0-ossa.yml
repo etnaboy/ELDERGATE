@@ -1,0 +1,206 @@
+# ═══════════════════════════════════════════════════════════════════
+# W0 — OSSA
+# Senza queste non c'è gioco. Nessuna è divertente, tutte sono obbligatorie.
+# Controllo automatico: python3 scripts/check_mods.py
+# ═══════════════════════════════════════════════════════════════════
+
+wave: 0
+title: "Ossa"
+goal: "Il gioco parte, l'interfaccia è leggibile, nessun crash all'avvio."
+
+# status:
+#   verified = esiste su Forge 1.20.1, controllata
+#   check    = va aperta e confermata in Fase 1
+#   risky    = esiste ma con un costo dichiarato in `why`
+
+libraries:
+  - name: Architectury API
+    slug: architectury-api
+    side: both
+    status: verified
+    why: "La chiedono Ars, Vampirism, Simply Swords e quasi tutti gli addon Iron's."
+
+  - name: Cloth Config API
+    slug: cloth-config
+    side: both
+    status: verified
+    why: "Schermate di configurazione. La chiedono in tanti, non si vede mai."
+
+  - name: GeckoLib
+    slug: geckolib
+    curseforge: 388172
+    side: both
+    status: verified
+    why: "Animazioni dei mob. Senza, metà dei boss non si avvia."
+
+  - name: Puzzles Lib
+    slug: puzzles-lib
+    side: both
+    status: verified
+    why: "Le sei mod YUNG's e tutte le mod di Fuzs."
+
+  - name: YUNG's API
+    slug: yungs-api
+    side: both
+    status: verified
+    why: "Tutte le strutture di YUNG. Obbligatoria in W1."
+
+  - name: Moonlight Lib
+    slug: moonlight
+    side: both
+    status: verified
+    why: "Supplementaries e decine di mod varie."
+
+  - name: Iceberg
+    slug: iceberg
+    side: both
+    status: verified
+    why: "Tooltip avanzati: la chiedono diverse mod di interfaccia."
+
+  - name: Kotlin for Forge
+    slug: kotlin-for-forge
+    side: both
+    status: verified
+    why: "Necessaria alle mod scritte in Kotlin. Una sola versione per tutte."
+
+  - name: Resourceful Lib
+    slug: resourceful-lib
+    side: both
+    status: verified
+    why: "Libreria di appoggio per diverse mod di contenuto."
+
+  - name: PlayerAnimator
+    slug: playeranimator
+    side: both
+    status: verified
+    why: "Animazioni del giocatore: la chiedono Punchy! e le mod di emote."
+
+# ── Anti-crash: non aggiungono gioco, salvano le prime tre sere ────
+stability:
+  - name: SerializationIsBad
+    slug: serializationisbad
+    side: both
+    status: verified
+    why: "Blocca gli exploit di deserializzazione. Costa zero, evita un ban."
+
+  - name: Neruina
+    slug: neruina
+    side: both
+    status: verified
+    why: "Un ticket di crash che non uccide il server: la entità rotta si congela invece di far cadere tutto."
+
+  - name: Crash Assistant
+    slug: crash-assistant
+    side: client
+    status: verified
+    why: "Legge il crash log e ti dice quale mod è. Da soli ci si mette un'ora."
+
+# ── Performance ───────────────────────────────────────────────────
+# Regola: UN solo Krypton. Krypton Reno è incompatibile con
+# Krypton Reforged, Ceres, Pluto e KryptonFoxified.
+performance:
+  - name: Embeddium
+    slug: embeddium
+    side: client
+    status: verified
+    why: "Renderer. È la base: senza, gli shader non partono. (La ++ è vietata.)"
+
+  - name: Oculus
+    slug: oculus
+    side: client
+    status: verified
+    why: "Shader con Embeddium. La patch 'Iris & Oculus Flywheel Compat' ne dipende."
+
+  - name: Ferrite Core
+    slug: ferritecore
+    side: both
+    status: verified
+    why: "Meno RAM occupata. Su un pack da 230 mod è la differenza tra 6 e 10 GB."
+
+  - name: ModernFix
+    slug: modernfix
+    side: both
+    status: verified
+    why: "Avvio più rapido e parecchi fix di worldgen."
+
+  - name: Entity Culling
+    slug: entityculling
+    side: client
+    status: verified
+    why: "Non disegna ciò che è nascosto dietro un muro. Guadagno di FPS pulito."
+
+  - name: Distant Horizons
+    slug: distanthorizons
+    side: client
+    status: verified
+    why: "Distanza di rendering estrema. È l'alternativa ufficiale a Voxy, che su Forge 1.20.1 non esiste davvero."
+
+  - name: Krypton Reno
+    slug: krypton-fnp
+    side: both
+    status: risky
+    why: "Ottimizza la rete. Va su Forge 1.20.1, ma è INCOMPATIBILE con Krypton Reforged, Ceres, Pluto e KryptonFoxified: uno solo di questi può stare nel pack."
+
+# ── Correzioni: non sono performance, sono ciò che rende i boss giocabili ──
+fixes:
+  - name: AttributeFix
+    slug: attributefix
+    side: both
+    status: verified
+    why: "Alza il tetto degli attributi. Senza, i boss hanno le statistiche tagliate."
+
+  - name: Max Health Fix
+    slug: max-health-fix
+    side: both
+    status: verified
+    why: "Cuori oltre il limite vanilla. Serve a chiunque dia vita extra."
+
+  - name: Entity Model Features (EMF)
+    slug: entity-model-features
+    side: client
+    status: check
+    why: "Modelli delle entità con OptiFine-style. Da confermare contro Embeddium."
+
+  - name: Entity Texture Features (ETF)
+    slug: entity-texture-features
+    side: client
+    status: check
+    why: "Texture delle entità. Va in coppia con EMF."
+
+# ── Interfaccia minima: senza queste non si gioca, si brancola ────
+interface:
+  - name: Controlling
+    slug: controlling
+    side: client
+    status: verified
+    why: "Cerca nei keybind. Indispensabile con 200+ mod."
+
+  - name: Keybind Purger
+    slug: keybind-purger
+    side: client
+    status: check
+    why: "Svuota i tasti in conflitto. Da verificare che copra anche i tasti delle mod."
+
+  - name: Default Options
+    slug: default-options
+    side: client
+    status: verified
+    why: "Il pack porta le sue impostazioni: chi entra non deve configurare 40 opzioni."
+
+  - name: Jade
+    slug: jade
+    side: client
+    status: verified
+    why: "Cosa guardi, cosa è. Con 200 mod è la prima cosa che manca."
+
+  - name: Just Enough Items (JEI)
+    slug: jei
+    side: both
+    status: verified
+    why: "Ricette. Nessuna alternativa sensata su Forge 1.20.1."
+
+  - name: Mouse Tweaks
+    slug: mouse-tweaks
+    side: client
+    status: verified
+    why: "Trascinare gli oggetti nell'inventario come un essere umano."
