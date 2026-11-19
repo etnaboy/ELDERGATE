@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import json
 import re
 import sys
@@ -273,6 +274,9 @@ def main() -> int:
         print(f"\nERRORI ({len(errors)}) — il pack NON viene generato:")
         for err in errors:
             print("  ✗ " + err)
+            # annotazione visibile nei check di GitHub, senza aprire i log
+            if os.environ.get("GITHUB_ACTIONS"):
+                print(f"::error title=Mod non risolta::{err}")
         print("\nCorreggi gli slug in mods/W%d-*.yml oppure rimuovi le voci." % args.wave)
         return 1
 
