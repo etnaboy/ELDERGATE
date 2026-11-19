@@ -32,9 +32,24 @@ si verifica che giri, e solo dopo si aggiunge il resto.
 ```
 mods/         le mod, una ondata per file
 docs/         le scelte, i motivi, le esclusioni
-scripts/      controlli automatici sulla lista
-manifest/     file di export (generati)
+scripts/      controlli automatici sulla lista + generatore del pacchetto
+pack.json     il nome del pack, la versione di Forge: un posto solo
+overrides/    config e options.txt che finiscono dentro il pacchetto
+manifest/     lock file (generati): che versione avevi quando funzionava
+dist/         i .mrpack generati (non versionati)
 ```
+
+## Il pacchetto
+
+Non si consegna una cartella `mods/`: si consegna un **`.mrpack`**, il formato Modrinth.
+
+```bash
+python3 scripts/build_mrpack.py --wave 0 --dry-run   # guarda, non scarica
+python3 scripts/build_mrpack.py --wave 0             # crea dist/*.mrpack
+```
+
+Serve internet verso `api.modrinth.com` (che la sandbox di sviluppo non ha): in CI
+gira da solo a ogni push. Dettagli e importazione: [`docs/mrpack.md`](docs/mrpack.md)
 
 Ogni mod è una voce così:
 

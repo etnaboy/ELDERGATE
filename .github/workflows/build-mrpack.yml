@@ -1,0 +1,74 @@
+name: Build mrpack
+
+# Genera il pacchetto installabile. Gira qui perché GitHub Actions HA internet
+# verso api.modrinth.com: la sandbox di sviluppo no.
+
+on:
+  push:
+    paths:
+      - "mods/**.yml"
+      - "scripts/build_mrpack.py"
+      - "pack.json"
+      - "overrides/**"
+  workflow_dispatch:
+    inputs:
+      wave:
+        description: "Ondata da impacchettare"
+        required: true
+        default: "0"
+        type: choice
+        options: ["0", "1", "2", "3", "4", "5", "6", "7"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installa PyYAML
+        run: pip install pyyaml
+
+      - name: Controllo lista
+        run: python3 scripts/check_mods.py
+
+      - name: Risolvi le versioni (dry-run)
+        id: resolve
+        run: |
+          WAVE="${{ github.event.inputs.wave || '0' }}"
+          echo "wave=$WAVE" >> "$GITHUB_OUTPUT"
+          python3 scripts/build_mrpack.py --wave "$WAVE" --dry-run
+
+      - name: Genera il .mrpack
+        run: |
+          WAVE="${{ steps.resolve.outputs.wave }}"
+          python3 scripts/build_mrpack.py --wave "$WAVE" -o "dist/ELDERGATE-W${WAVE}.mrpack"
+
+      - name: Riepilogo
+        run: |
+          WAVE="${{ steps.resolve.outputs.wave }}"
+          {
+            echo "## ELDERGATE — ondata $WAVE"
+            echo ""
+            echo "| File | Dimensione |"
+            echo "|---|---|"
+            ls -lh "dist/ELDERGATE-W${WAVE}.mrpack" | awk '{print "| " $9 " | " $5 " |"}'
+            echo ""
+            echo "**Come si usa:** scarica l'artifact qui sotto, poi in Prism Launcher o"
+            echo "Modrinth App fai *Add instance → Import from file*."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eldergate-mrpack-w${{ steps.resolve.outputs.wave }}
+          path: dist/*.mrpack
+          retention-days: 30
+
+      - name: Verifica che il lock file ci sia
+        run: |
+          WAVE="${{ steps.resolve.outputs.wave }}"
+          test -f "manifest/lock-w${WAVE}.json" || { echo "lock file mancante"; exit 1; }
+          echo "lock: manifest/lock-w${WAVE}.json"

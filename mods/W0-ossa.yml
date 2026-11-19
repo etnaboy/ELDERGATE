@@ -112,7 +112,7 @@ performance:
     why: "Shader con Embeddium. La patch 'Iris & Oculus Flywheel Compat' ne dipende."
 
   - name: Ferrite Core
-    slug: ferritecore
+    slug: ferrite-core
     side: both
     status: verified
     why: "Meno RAM occupata. Su un pack da 230 mod è la differenza tra 6 e 10 GB."
@@ -162,7 +162,7 @@ fixes:
     why: "Modelli delle entità con OptiFine-style. Da confermare contro Embeddium."
 
   - name: Entity Texture Features (ETF)
-    slug: entity-texture-features
+    slug: entitytexturefeatures
     side: client
     status: check
     why: "Texture delle entità. Va in coppia con EMF."
@@ -175,8 +175,8 @@ interface:
     status: verified
     why: "Cerca nei keybind. Indispensabile con 200+ mod."
 
-  - name: Keybind Purger
-    slug: keybind-purger
+  - name: KeybindsPurger
+    slug: keybindspurger
     side: client
     status: check
     why: "Svuota i tasti in conflitto. Da verificare che copra anche i tasti delle mod."

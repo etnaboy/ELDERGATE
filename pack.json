@@ -1,0 +1,8 @@
+{
+  "name": "ELDERGATE",
+  "summary": "SMP Forge 1.20.1 — rich pure fantasy. Ondate: si parte dalle fondamenta.",
+  "version": "0.1.0",
+  "minecraft": "1.20.1",
+  "forge": "47.4.14",
+  "_note": "Il nome vive SOLO qui. Per rinominare il pack si cambia 'name' e si ricostruisce: file, indice, artifact e release seguono da soli. Vincolo noto: 'ELDERGATE' ha un marchio Jagex su 'video game software' — non usarlo come slug pubblico su CurseForge/Modrinth."
+}
